@@ -254,6 +254,7 @@ let loading_git = (color) => {
 (function(){
     let github_container = document.getElementById('github_container');
     let github_loading = document.getElementById('github_loading');
+    append_div_gitcalendar(github_container, loading_git(git_color[4]));
     github_canlendar(git_user,git_githubapiurl, git_color)})()
 
 
