@@ -250,6 +250,6 @@ let append_div_gitcalendar = (parent, text) => {
 (function(){
     let github_container = document.getElementById('github_container');
     let github_loading = document.getElementById('github_loading');
-    github_canlendar(git_githubapiurl, git_color)})()
+    github_canlendar(git_user,git_githubapiurl, git_color)})()
 
 
