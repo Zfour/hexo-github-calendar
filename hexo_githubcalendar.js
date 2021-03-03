@@ -1,4 +1,4 @@
-let github_canlendar = (git_githubapiurl, git_color) => {
+let github_canlendar = (git_user,git_githubapiurl, git_color) => {
     let git_fixed = 'fixed';
     let git_px = 'px';
     let git_month = ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'];
