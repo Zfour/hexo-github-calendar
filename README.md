@@ -1,7 +1,8 @@
 # hexo-github-calendar
 
 主题配置项：
-```
+
+```yml
 # Ice Kano Plus_in
 # Hexo Github Canlendar
 githubcalendar:
