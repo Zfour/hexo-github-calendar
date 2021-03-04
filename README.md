@@ -3,11 +3,17 @@
 主题配置项：
 ```
 # Ice Kano Plus_in
+# Hexo Github Canlendar
 githubcalendar:
   enable: true
   user: zfour
+  layout_id: recent-posts
+  githubcalendar_html: '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><div id="github_container"></div></div>'
+  pc_minheight: 280px
+  mobile_minheight: 120px
   color: "['#ebedf0', '#fdcdec', '#fc9bd9', '#fa6ac5', '#f838b2', '#f5089f', '#c4067e', '#92055e', '#540336', '#48022f', '#30021f']"
   api: https://python-github-calendar-api.vercel.app/api
+  calendar_js: https://cdn.jsdelivr.net/gh/Zfour/hexo-github-calendar/hexo_githubcalendar.js
 ```
 
 把plug_in丢到  "\{blogroot}\themes\butterfly\scripts"下
@@ -16,4 +22,4 @@ githubcalendar:
 hexo clean&hexo g&hexo s
 
 
-就没了！
+就完成了。
