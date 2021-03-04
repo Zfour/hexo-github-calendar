@@ -10,7 +10,7 @@ const logger = require('hexo-log')()
 
 //定义函数
 hexo.extend.helper.register('github_calendar_js_cdn', function(link){
-  return   '<script src="'+ link +'"></script>'
+  return   '<script data-pjax src="'+ link +'"></script>'
 });
 
 hexo.extend.filter.register('after_generate',function(){
@@ -25,7 +25,7 @@ hexo.extend.filter.register('after_generate',function(){
   var github_api = hexo.theme.config.githubcalendar.api;
   var pc_minheight = hexo.theme.config.githubcalendar.pc_minheight;
   var mobile_minheight = hexo.theme.config.githubcalendar.mobile_minheight;
-  var user_info_js = '<script>' + 'let git_githubapiurl ="'+ github_api + '?' + github_user +'";'+
+  var user_info_js = '<script data-pjax>' + 'let git_githubapiurl ="'+ github_api + '?' + github_user +'";'+
       'let git_color ='+ github_color +';'+
       'let git_user ="'+ github_user +'";'+
       'let parent_div_git = document.getElementById('+'"'+ layout_id +'"'+');'+
