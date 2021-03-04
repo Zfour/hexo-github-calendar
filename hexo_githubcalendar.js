@@ -1,4 +1,5 @@
 (function(){
+    if(document.getElementById('github_container')){
     let github_canlendar = (git_user,git_githubapiurl, git_color) => {
     let git_fixed = 'fixed';
     let git_px = 'px';
@@ -179,7 +180,6 @@
         addlastmonth();
         let html = github_main_box(git_monthchange, git_data, git_user, git_color, git_total, git_thisweekdatacore, git_weekdatacore, git_oneyearbeforeday, git_thisday, git_aweekago, git_amonthago);
         append_div_gitcalendar(github_container, html);
-        document.getElementById('github_loading').innerHTML = "";
         responsiveChart()
     }).catch(function (error) {
         console.log(error)
@@ -246,13 +246,9 @@
         parent.appendChild(text)
     }
 };
-    let loading_git = (color) => {
-    loading = '<div id="github_loading" style="width:10%;height:100%;margin:0 auto;display: block"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="' + color + '" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform></path></svg></div>';
-    return loading
-};
     let github_container = document.getElementById('github_container');
     let github_loading = document.getElementById('github_loading');
-    append_div_gitcalendar(github_container, loading_git(git_color[4]));
-    github_canlendar(git_user,git_githubapiurl, git_color)})()
+    github_canlendar(git_user,git_githubapiurl, git_color)}
+})()
 
 
