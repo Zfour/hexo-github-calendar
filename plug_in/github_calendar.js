@@ -41,7 +41,7 @@ hexo.extend.filter.register('after_generate',function(){
   //查询已定义函数并命名
   const github_calendar_js_cdn = hexo.extend.helper.get('github_calendar_js_cdn').bind(hexo);
   // inject插入 Github Canlendar js依赖
-  hexo.extend.injector.register('body_end',github_calendar_js_cdn(calendar_js), calendar_page_setting);
+  hexo.extend.injector.register('body_end',github_calendar_js_cdn(calendar_js),'default');
 }})
 
 
