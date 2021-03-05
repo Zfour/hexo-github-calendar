@@ -1,6 +1,6 @@
 function GithubCalendar(git_githubapiurl,git_color,git_user){
     if(document.getElementById('github_loading')){
-        document.getElementById('github_loading').innerHTML = ""};
+        document.getElementById('github_loading').remove()};
     if(document.getElementById('github_container')){
     var github_canlendar = (git_user,git_githubapiurl, git_color) => {
     var git_fixed = 'fixed';
