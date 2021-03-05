@@ -5,6 +5,9 @@
 ```yml
 # Ice Kano Plus_in
 # Hexo Github Canlendar
+# Author: Ice Kano
+# Modify: Lete乐特
+
 githubcalendar:
   enable: true
   user: zfour
