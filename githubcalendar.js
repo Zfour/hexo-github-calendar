@@ -179,7 +179,8 @@ let github_canlendar = (git_user, git_color) => {
         addlastmonth();
         let html = github_main_box(git_monthchange, git_data, git_user, git_color, git_total, git_thisweekdatacore, git_weekdatacore, git_oneyearbeforeday, git_thisday, git_aweekago, git_amonthago);
         append_div_gitcalendar(github_container, html);
-        document.getElementById('github_loading').innerHTML = "";
+        if(document.getElementById('github_loading')){
+        document.getElementById('github_loading').innerHTML = ""};
         responsiveChart()
     }).catch(function (error) {
         console.log(error)
