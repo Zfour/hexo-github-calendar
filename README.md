@@ -1,6 +1,12 @@
 # hexo-github-calendar
 
-主题配置项：
+一键部署：
+
+```
+npm i hexo-githubcalendar --save
+```
+
+网站主题配置项(不是主题)：
 
 ```yml
 # Ice Kano Plus_in
@@ -20,10 +26,11 @@ githubcalendar:
   calendar_js: https://cdn.jsdelivr.net/gh/Zfour/hexo-github-calendar@1.10/hexo_githubcalendar.js
 ```
 
-把plug_in丢到  "\{blogroot}\themes\butterfly\scripts"下
+执行
 
-
-hexo clean&hexo g&hexo s
-
+```
+hexo clean & hexo g & hexo s
+```
 
 就完成了。
+
