@@ -1,4 +1,6 @@
 function GithubCalendar(git_githubapiurl,git_color,git_user){
+    if(document.getElementById('github_loading')){
+        document.getElementById('github_loading').innerHTML = ""};
     if(document.getElementById('github_container')){
     var github_canlendar = (git_user,git_githubapiurl, git_color) => {
     var git_fixed = 'fixed';
@@ -176,8 +178,6 @@ function GithubCalendar(git_githubapiurl,git_color,git_user){
         git_monthindex = git_thisday.substring(5, 7) * 1;
         git_montharrbefore = git_month.splice(git_monthindex, 12 - git_monthindex);
         git_monthchange = git_montharrbefore.concat(git_month);
-        if(document.getElementById('github_loading')){
-        document.getElementById('github_loading').innerHTML = ""};
         addweek(data);
         addlastmonth();
         var html = github_main_box(git_monthchange, git_data, git_user, git_color, git_total, git_thisweekdatacore, git_weekdatacore, git_oneyearbeforeday, git_thisday, git_aweekago, git_amonthago);
