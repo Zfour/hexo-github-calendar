@@ -6,7 +6,7 @@
 npm i hexo-githubcalendar --save
 ```
 
-网站主题配置项(不是主题)：
+网站根目录_config配置项(不是主题的)：
 
 ```yml
 # Ice Kano Plus_in
@@ -26,11 +26,17 @@ githubcalendar:
   calendar_js: https://cdn.jsdelivr.net/gh/Zfour/hexo-github-calendar@1.10/hexo_githubcalendar.js
 ```
 
-执行
+执行：
 
 ```
 hexo clean & hexo g & hexo s
 ```
 
-就完成了。
+效果：
+![image](https://user-images.githubusercontent.com/19563906/110137138-76ee4980-7e0b-11eb-881c-72b86271cd4f.png)
+
+
+
+
+
 
