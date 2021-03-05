@@ -6,14 +6,9 @@
 
 'use strict'
 
-//导入 hexo logger
-const logger = require('hexo-log')()
-
 hexo.extend.filter.register('after_generate',function(){
   var github_calendar = hexo.theme.config.githubcalendar.enable;
   if (github_calendar){
-    logger.info('已导入小冰插件：Butterfly Github Canlendar')
-  var calendar_page_setting = hexo.theme.config.githubcalendar.calendar_page_setting;  
   var calendar_js = hexo.theme.config.githubcalendar.calendar_js;
   var github_color = hexo.theme.config.githubcalendar.color;
   var layout_id = hexo.theme.config.githubcalendar.layout_id;
