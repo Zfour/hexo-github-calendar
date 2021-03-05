@@ -1,6 +1,4 @@
 function GithubCalendar(git_githubapiurl,git_color,git_user){
-    if(document.getElementById('github_loading')){
-        document.getElementById('github_loading').remove()};
     if(document.getElementById('github_container')){
     var github_canlendar = (git_user,git_githubapiurl, git_color) => {
     var git_fixed = 'fixed';
@@ -165,6 +163,8 @@ function GithubCalendar(git_githubapiurl,git_color,git_user){
     }
 
     fetch(git_githubapiurl).then(data => data.json()).then(data => {
+            if(document.getElementById('github_loading')){
+        document.getElementById('github_loading').remove()};
         git_data = data.contributions;
         git_total = data.total;
         git_first2date = git_data[48];
