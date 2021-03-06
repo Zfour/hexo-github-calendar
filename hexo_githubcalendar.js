@@ -36,9 +36,9 @@ function GithubCalendar(git_githubapiurl,git_color,git_user){
                 var git_y = '';
                 var git_span1 = '';
                 var git_span2 = '';
-                var c = document.getElementById("gitcanvas");
+                var github_calendar_c = document.getElementById("gitcanvas");
                 var cmessage = document.getElementById("gitmessage");
-                var ctx = github_calendar_c.getContext("2d");
+                var github_calendar_ctx = github_calendar_c.getContext("2d");
                 github_calendar_c.width = document.getElementById("gitcalendarcanvasbox").offsetWidth;
                 var linemaxwitdh = 0.96 * github_calendar_c.width / git_data.length;
                 github_calendar_c.height = 9 * linemaxwitdh;
