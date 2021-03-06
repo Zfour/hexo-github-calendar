@@ -78,7 +78,7 @@ function GithubCalendar(git_githubapiurl,git_color,git_user){
                     if (document.querySelector('.gitmessage')) {
                         git_tooltip_container.innerHTML = ""
                     }
-                    getMousePos(c, event)
+                    getMousePos(github_calendar_c, event)
                 };
                 git_tooltip_container.onmousemove = function (event) {
                     if (document.querySelector('.gitmessage')) {
