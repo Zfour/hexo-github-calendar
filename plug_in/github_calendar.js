@@ -7,17 +7,18 @@
 'use strict'
 
 hexo.extend.filter.register('after_generate',function(){
-  var github_calendar = hexo.theme.config.githubcalendar.enable;
-  if (github_calendar){
-  var calendar_js = hexo.theme.config.githubcalendar.calendar_js;
-  var github_color = hexo.theme.config.githubcalendar.color;
-  var layout_id = hexo.theme.config.githubcalendar.layout_id;
-  var githubcalendar_html = hexo.theme.config.githubcalendar.githubcalendar_html;
-  var github_user = hexo.theme.config.githubcalendar.user;
-  var github_api = hexo.theme.config.githubcalendar.api;
-  var pc_minheight = hexo.theme.config.githubcalendar.pc_minheight;
-  var mobile_minheight = hexo.theme.config.githubcalendar.mobile_minheight;
-  var user_info_js = `
+    var config = this.config;
+    var github_calendar = config.githubcalendar.enable;
+    if (github_calendar){
+        var calendar_js = config.githubcalendar.calendar_js;
+        var github_color = config.githubcalendar.color;
+        var layout_id = config.githubcalendar.layout_id;
+        var githubcalendar_html = config.githubcalendar.githubcalendar_html;
+        var github_user = config.githubcalendar.user;
+        var github_api = config.githubcalendar.api;
+        var pc_minheight = config.githubcalendar.pc_minheight;
+        var mobile_minheight = config.githubcalendar.mobile_minheight;
+        var user_info_js = `
   <script data-pjax src="${calendar_js}"></script>
   <script data-pjax>
         function GithubCalendarConfig(){
@@ -37,5 +38,5 @@ hexo.extend.filter.register('after_generate',function(){
         }
     </script>
     <style>#github_container{min-height:${pc_minheight}}@media screen and (max-width:650px) {#github_container{background-image:;min-height:${mobile_minheight}}}</style>`
-    hexo.extend.injector.register('body_end',user_info_js, "default");
-}})
+        hexo.extend.injector.register('body_end',user_info_js, "default");
+    }})
