@@ -150,7 +150,7 @@ function GithubCalendar(git_githubapiurl,git_color,git_user){
         }
     }
 
-    vat addweek = (data) => {
+    var addweek = (data) => {
         if (git_thisdayindex === 6) {
             git_aweekago = git_lastweek[0].date;
             addlastweek()
