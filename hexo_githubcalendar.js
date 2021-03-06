@@ -30,7 +30,7 @@ function GithubCalendar(git_githubapiurl,git_color,git_user){
     var git_montharrbefore = [];
     var git_monthindex = 0;
 
-    function responsiveChart() {
+     var responsiveChart = () => {
         var git_tooltip_container = document.getElementById('git_tooltip_container');
         var git_x = '';
         var git_y = '';
@@ -86,7 +86,7 @@ function GithubCalendar(git_githubapiurl,git_color,git_user){
             }
         };
 
-        function getMousePos(canvas, event) {
+        var getMousePos = (canvas, event) => {
             var rect = canvas.getBoundingClientRect();
             var x = event.clientX - rect.left * (canvas.width / rect.width);
             var y = event.clientY - rect.top * (canvas.height / rect.height);
@@ -107,7 +107,7 @@ function GithubCalendar(git_githubapiurl,git_color,git_user){
         }
     }
 
-    function addlastmonth() {
+    var addlastmonth = () => {
         if (git_thisdayindex === 0) {
             thisweekcore(52);
             thisweekcore(51);
@@ -126,31 +126,31 @@ function GithubCalendar(git_githubapiurl,git_color,git_user){
         }
     }
 
-    function thisweek2core() {
+    var thisweek2core = () => {
         for (var i = git_thisdayindex - 1; i < git_first2date.length; i++) {
             git_thisweekdatacore += git_first2date[i].count
         }
     }
 
-    function thisweekcore(index) {
+    var thisweekcore = (index)  => {
         for (var item of git_data[index]) {
             git_thisweekdatacore += item.count
         }
     }
 
-    function addlastweek() {
+    var addlastweek = () => {
         for (var item of git_lastweek) {
             git_weekdatacore += item.count
         }
     }
 
-    function addbeforeweek() {
+    var addbeforeweek = () => {
         for (var i = git_thisdayindex; i < git_beforeweek.length; i++) {
             git_weekdatacore += git_beforeweek[i].count
         }
     }
 
-    function addweek(data) {
+    vat addweek = (data) => {
         if (git_thisdayindex === 6) {
             git_aweekago = git_lastweek[0].date;
             addlastweek()
