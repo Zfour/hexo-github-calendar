@@ -1,0 +1,24 @@
+{
+  "name": "hexo-githubcalendar",
+  "version": "1.1.7",
+  "description": "A Plus_in for hexo to show github calendar.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ice Kano",
+  "contributors": [
+    "Lete乐特"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Zfour/hexo-github-calendar.git"
+  },
+  "devDependencies": {
+    "hexo": "^3.2.0"
+  },
+  "__npminstall_done": "Sat Mar 06 2021 20:24:13 GMT+0800 (中国标准时间)",
+  "_from": "hexo-githubcalendar@1.1.5",
+  "_resolved": "https://registry.npm.taobao.org/hexo-githubcalendar/download/hexo-githubcalendar-1.1.5.tgz"
+}

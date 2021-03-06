@@ -10,6 +10,7 @@ hexo.extend.filter.register('after_generate',function(){
     var config = this.config;
     var github_calendar = config.githubcalendar.enable;
     if (github_calendar){
+        var calendar_enable_page = config.githubcalendar.enable_page;
         var calendar_js = config.githubcalendar.calendar_js;
         var github_color = config.githubcalendar.color;
         var layout_id = config.githubcalendar.layout_id;
@@ -27,7 +28,8 @@ hexo.extend.filter.register('after_generate',function(){
             var git_user ="${github_user}";
             var parent_div_git = document.getElementById("${layout_id}");
             var git_div_html = '${githubcalendar_html}';
-            if(parent_div_git){
+            if(parent_div_git && location.pathname =='${calendar_enable_page}'){
+                console.log('已挂载github calendar')
                 // parent_div_git.innerHTML=git_div_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
                 parent_div_git.insertAdjacentHTML("afterbegin",git_div_html) // 有报错，但不影响使用(支持pjax跳转)
             };

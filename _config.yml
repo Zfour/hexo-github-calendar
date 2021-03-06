@@ -1,14 +1,3 @@
-# hexo-github-calendar
-
-一键部署：
-
-```
-npm i hexo-githubcalendar --save
-```
-
-网站根目录_config配置项(不是主题的)：
-
-```yml
 # Ice Kano Plus_in
 # Hexo Github Canlendar
 # Author: Ice Kano
@@ -25,20 +14,3 @@ githubcalendar:
   api: https://python-github-calendar-api.vercel.app/api
   # api: https://python-gitee-calendar-api.vercel.app/api
   calendar_js: https://cdn.jsdelivr.net/gh/Zfour/hexo-github-calendar@1.16/hexo_githubcalendar.js
-```
-
-执行：
-
-```
-hexo clean & hexo g & hexo s
-```
-
-效果：
-
-![image](https://user-images.githubusercontent.com/19563906/110137138-76ee4980-7e0b-11eb-881c-72b86271cd4f.png)
-
-
-
-
-
-
