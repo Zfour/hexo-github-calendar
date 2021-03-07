@@ -29,9 +29,20 @@ function GithubCalendar(git_githubapiurl,git_color,git_user){
             var git_first2date = [];
             var git_montharrbefore = [];
             var git_monthindex = 0;
-
+            var retinaCanvas = (canvas, context, ratio) => {
+                if (ratio > 1) {
+                    var canvasWidth = canvas.width;
+                    var canvasHeight = canvas.height;
+                    canvas.width = canvasWidth * ratio;
+                    canvas.height = canvasHeight * ratio;
+                    canvas.style.width = canvasWidth + 'px';
+                    canvas.style.height = canvasHeight + 'px';
+                    context.scale(ratio, ratio);
+                }
+            }
             var responsiveChart = () => {
                 if(document.getElementById("gitcanvas")){
+                    var ratio = window.devicePixelRatio || 1;
                     var git_tooltip_container = document.getElementById('git_tooltip_container');
                     var git_x = '';
                     var git_y = '';
@@ -41,8 +52,11 @@ function GithubCalendar(git_githubapiurl,git_color,git_user){
                     var cmessage = document.getElementById("gitmessage");
                     var github_calendar_ctx = github_calendar_c.getContext("2d");
                     github_calendar_c.width = document.getElementById("gitcalendarcanvasbox").offsetWidth;
-                    var linemaxwitdh = 0.96 * github_calendar_c.width / git_data.length;
-                    github_calendar_c.height = 9 * linemaxwitdh;
+                    github_calendar_c.height = 9 * 0.96 * github_calendar_c.width / git_data.length;
+                    if (document.body.clientWidth < 700) {
+                        retinaCanvas(github_calendar_c, github_calendar_ctx, ratio)
+                    }
+                    var linemaxwitdh = github_calendar_c.height / 9;
                     var lineminwitdh = 0.8 * linemaxwitdh;
                     var setposition = {x: 0.02 * github_calendar_c.width, y: 0.025 * github_calendar_c.width};
                     for (var week in git_data) {
