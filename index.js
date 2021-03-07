@@ -13,7 +13,26 @@ hexo.extend.filter.register('after_generate',function(){
         var calendar_enable_page = config.githubcalendar.enable_page;
         var calendar_js = config.githubcalendar.calendar_js;
         var github_color = config.githubcalendar.color;
-        var layout_id = config.githubcalendar.layout_id;
+        var layout_name ='';
+        var layout_type ='';
+        var layout_index =0;
+        if(config.githubcalendar.layout_id){
+            layout_name = config.githubcalendar.layout_id;
+            layout_type = 'id';
+        }else{
+            layout_name = config.githubcalendar.layout.name;
+            layout_type = config.githubcalendar.layout.type;
+            layout_index =  config.githubcalendar.layout.index;
+        }
+        var get_layout = ''
+        if (layout_type == 'class'){
+            get_layout =  `document.getElementsByClassName('${layout_name}')[${layout_index}]`
+        }else if (layout_type == 'id'){
+            get_layout =  `document.getElementById('${layout_name}')`
+        }else {
+            get_layout =  `document.getElementById('${layout_name}')`
+        }
+        var plus_style = config.githubcalendar.plus_style;
         var githubcalendar_html = config.githubcalendar.githubcalendar_html;
         var github_user = config.githubcalendar.user;
         var github_api = config.githubcalendar.api;
@@ -26,7 +45,7 @@ hexo.extend.filter.register('after_generate',function(){
             var git_githubapiurl ="${github_api}?${github_user}";
             var git_color =${github_color};
             var git_user ="${github_user}";
-            var parent_div_git = document.getElementById("${layout_id}");
+            var parent_div_git = ${get_layout};
             var git_div_html = '${githubcalendar_html}';
             if(parent_div_git && location.pathname =='${calendar_enable_page}'){
                 console.log('已挂载github calendar')
@@ -35,10 +54,11 @@ hexo.extend.filter.register('after_generate',function(){
             };
             GithubCalendar(git_githubapiurl,git_color,git_user)
         }
-        if(document.getElementById("${layout_id}")){
+        if(${get_layout}){
             GithubCalendarConfig()
         }
     </script>
-    <style>#github_container{min-height:${pc_minheight}}@media screen and (max-width:650px) {#github_container{background-image:;min-height:${mobile_minheight}}}</style>`
+    <style>#github_container{min-height:${pc_minheight}}@media screen and (max-width:650px) {#github_container{background-image:;min-height:${mobile_minheight}}}</style>
+    <style>${plus_style}</style>`
         hexo.extend.injector.register('body_end',user_info_js, "default");
     }})
