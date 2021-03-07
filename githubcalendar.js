@@ -28,13 +28,19 @@ var github_canlendar = (git_user, git_color) => {
     var git_first2date = [];
     var git_montharrbefore = [];
     var git_monthindex = 0;
-        var ratio = window.devicePixelRatio || 1;
+
+    function responsiveChart() {
+        var git_tooltip_container = document.getElementById('git_tooltip_container');
+        var git_x = '';
+        var git_y = '';
+        var git_span1 = '';
+        var git_span2 = '';
         var c = document.getElementById("gitcanvas");
         var cmessage = document.getElementById("gitmessage");
         var ctx = c.getContext("2d");
         c.width = document.getElementById("gitcalendarcanvasbox").offsetWidth;
-        c.height = 9 * 0.96 * c.width / git_data.length;
-        var linemaxwitdh = c.height/ 9;
+        var linemaxwitdh = 0.96 * c.width / git_data.length;
+        c.height = 9 * linemaxwitdh;
         var lineminwitdh = 0.8 * linemaxwitdh;
         var setposition = {x: 0.02 * c.width, y: 0.025 * c.width};
         for (var week in git_data) {
