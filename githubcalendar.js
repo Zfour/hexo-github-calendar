@@ -28,8 +28,19 @@ var github_canlendar = (git_user, git_color) => {
     var git_first2date = [];
     var git_montharrbefore = [];
     var git_monthindex = 0;
-
+    var retinaCanvas = (canvas, context, ratio) => {
+        if (ratio > 1) {
+            var canvasWidth = canvas.width;
+            var canvasHeight = canvas.height;
+            canvas.width = canvasWidth * ratio;
+            canvas.height = canvasHeight * ratio;
+            canvas.style.width = '100%';
+            canvas.style.height = canvasHeight + 'px';
+            context.scale(ratio, ratio);
+        }
+    };
     function responsiveChart() {
+        var ratio = window.devicePixelRatio || 1
         var git_tooltip_container = document.getElementById('git_tooltip_container');
         var git_x = '';
         var git_y = '';
@@ -38,11 +49,12 @@ var github_canlendar = (git_user, git_color) => {
         var c = document.getElementById("gitcanvas");
         var cmessage = document.getElementById("gitmessage");
         var ctx = c.getContext("2d");
-        c.width = document.getElementById("gitcalendarcanvasbox").offsetWidth;
-        var linemaxwitdh = 0.96 * c.width / git_data.length;
-        c.height = 9 * linemaxwitdh;
+        width = c.width = document.getElementById("gitcalendarcanvasbox").offsetWidth;
+        height = c.height = 9 * 0.96 * c.width / git_data.length;
+        retinaCanvas(c,ctx, ratio)
+        var linemaxwitdh = height/ 9;
         var lineminwitdh = 0.8 * linemaxwitdh;
-        var setposition = {x: 0.02 * c.width, y: 0.025 * c.width};
+        var setposition = {x: 0.02 * width, y: 0.025 * width};
         for (var week in git_data) {
             weekdata = git_data[week];
             for (var day in weekdata) {
@@ -57,7 +69,7 @@ var github_canlendar = (git_user, git_color) => {
                 ctx.fillRect(setposition.x, setposition.y, lineminwitdh, lineminwitdh);
                 setposition.y = setposition.y + linemaxwitdh
             }
-            setposition.y = 0.025 * c.width;
+            setposition.y = 0.025 * width;
             setposition.x = setposition.x + linemaxwitdh
         }
         if (document.body.clientWidth > 700) {
@@ -67,10 +79,10 @@ var github_canlendar = (git_user, git_color) => {
             ctx.fillText("二", 0, 3.9 * linemaxwitdh);
             ctx.fillText("四", 0, 5.9 * linemaxwitdh);
             ctx.fillText("六", 0, 7.9 * linemaxwitdh);
-            var monthindexlist = c.width / 24;
+            var monthindexlist = width / 24;
             for (var index in git_monthchange) {
                 ctx.fillText(git_monthchange[index], monthindexlist, 0.7 * linemaxwitdh);
-                monthindexlist = monthindexlist + c.width / 12
+                monthindexlist = monthindexlist + width / 12
             }
         }
         c.onmousemove = function (event) {
