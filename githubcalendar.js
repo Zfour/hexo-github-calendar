@@ -28,33 +28,12 @@ var github_canlendar = (git_user, git_color) => {
     var git_first2date = [];
     var git_montharrbefore = [];
     var git_monthindex = 0;
-
-    function responsiveChart() {
-        var git_tooltip_container = document.getElementById('git_tooltip_container');
-        var git_x = '';
-        var git_y = '';
-        var git_span1 = '';
-        var git_span2 = '';
-        var retinaCanvas = (canvas, context, ratio) => {
-                if (ratio > 1) {
-                    var canvasWidth = canvas.width;
-                    var canvasHeight = canvas.height;
-                    canvas.width = canvasWidth * ratio;
-                    canvas.height = canvasHeight * ratio;
-                    canvas.style.width = canvasWidth + 'px';
-                    canvas.style.height = canvasHeight + 'px';
-                    context.scale(ratio, ratio);
-                }
-            }
         var ratio = window.devicePixelRatio || 1;
         var c = document.getElementById("gitcanvas");
         var cmessage = document.getElementById("gitmessage");
         var ctx = c.getContext("2d");
         c.width = document.getElementById("gitcalendarcanvasbox").offsetWidth;
         c.height = 9 * 0.96 * c.width / git_data.length;
-        if (document.body.clientWidth < 700) {
-                        retinaCanvas(c, ctx, ratio)
-                    }
         var linemaxwitdh = c.height/ 9;
         var lineminwitdh = 0.8 * linemaxwitdh;
         var setposition = {x: 0.02 * c.width, y: 0.025 * c.width};
