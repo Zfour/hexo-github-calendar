@@ -1,6 +1,6 @@
 # hexo-github-calendar
 
-## 教程
+## 教程：
 链接：https://zfe.space/post/hexo-githubcalendar.html
 
 ## 一键部署：
