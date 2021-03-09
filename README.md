@@ -1,12 +1,15 @@
 # hexo-github-calendar
 
-一键部署：
+## 教程
+链接：https://zfe.space/post/hexo-githubcalendar.html
+
+## 一键部署：
 
 ```
 npm i hexo-githubcalendar --save
 ```
 
-网站根目录_config配置项(不是主题的)：
+## 网站根目录_config配置项(不是主题的)：
 例如butterfly配置为
 ```yml
 # Ice Kano Plus_in
@@ -35,13 +38,13 @@ githubcalendar:
 更多主题配置请参考issuse页：https://github.com/Zfour/hexo-github-calendar/issues
 
 
-执行：
+## 执行：
 
 ```
 hexo clean & hexo g & hexo s
 ```
 
-效果：
+## 效果：
 
 ![image](https://user-images.githubusercontent.com/19563906/110137138-76ee4980-7e0b-11eb-881c-72b86271cd4f.png)
 
