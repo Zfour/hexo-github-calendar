@@ -1,6 +1,6 @@
 {
   "name": "hexo-githubcalendar",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "A Plus_in for hexo to show github calendar.",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,12 @@
   "author": "Ice Kano",
   "contributors": [
     "Lete乐特"
+  ],
+  "keywords": [
+    "hexo",
+    "github",
+    "gitee",
+    "plugin"
   ],
   "license": "MIT",
   "repository": {
