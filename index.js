@@ -6,6 +6,18 @@
 
 'use strict'
 
+function priority_githubcalendar(){
+    var priority = 0
+    if(hexo.config.githubcalendar.priority){
+        priority = hexo.config.githubcalendar.priority
+    }
+    else{
+        priority = 0
+    }
+    return priority
+}
+
+var priority = 0
 hexo.extend.filter.register('after_generate',function(){
     var config = this.config;
     var github_calendar = config.githubcalendar.enable;
@@ -61,4 +73,4 @@ hexo.extend.filter.register('after_generate',function(){
     <style>#github_container{min-height:${pc_minheight}}@media screen and (max-width:650px) {#github_container{background-image:;min-height:${mobile_minheight}}}</style>
     <style>${plus_style}</style>`
         hexo.extend.injector.register('body_end',user_info_js, "default");
-    }})
+    }},priority_githubcalendar())

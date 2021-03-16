@@ -1,6 +1,6 @@
 {
   "name": "hexo-githubcalendar",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "A Plus_in for hexo to show github calendar.",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,7 @@
   "devDependencies": {
     "hexo": "^3.2.0"
   },
-  "__npminstall_done": "Sat Mar 06 2021 20:24:13 GMT+0800 (中国标准时间)",
-  "_from": "hexo-githubcalendar@1.1.5",
-  "_resolved": "https://registry.npm.taobao.org/hexo-githubcalendar/download/hexo-githubcalendar-1.1.5.tgz"
+  "__npminstall_done": "Thu Mar 11 2021 19:29:46 GMT+0800 (中国标准时间)",
+  "_from": "hexo-githubcalendar@1.2.2",
+  "_resolved": "https://registry.npm.taobao.org/hexo-githubcalendar/download/hexo-githubcalendar-1.2.2.tgz"
 }
