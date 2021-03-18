@@ -20,6 +20,7 @@ npm i hexo-githubcalendar --save
 # butterfly
 githubcalendar:
   enable: true
+  priority: 0
   enable_page: /
   user: zfour
   layout:
